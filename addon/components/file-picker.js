@@ -157,12 +157,12 @@ export default Component.extend({
 
   // for appbrowzer dashboard
 
-  observeDefaultImageURL: function () {
+  observeDefaultImageURL: Ember.observer('defaultImageURL', function () {
     if (this.get('defaultImageURL') !== null) {
       this.showPreview();
       this.setDefaultPreviewImage();
     }
-  }.observes('defaultImageURL'),
+  }),
   
   setDefaultPreviewImage: function () {
     var defaultImageURL = this.get('defaultImageURL');
